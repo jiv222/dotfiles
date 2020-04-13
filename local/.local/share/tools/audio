@@ -1,0 +1,28 @@
+SINK=$(pacmd list-sinks | awk '/\* index:/{ print $3 }')
+case "$1" in
+  up)
+    pactl set-sink-volume "$SINK" +5%
+    ;;
+  down)
+    pactl set-sink-volume "$SINK" -5%
+    ;;
+  mute)
+    pactl set-sink-mute "$SINK" toggle
+    ;;
+  playpause)
+    mpc toggle || playerctl play-pause
+    ;;
+  next)
+    mpc next || playerctl next
+    songnotify
+    ;;
+  prev)
+    mpc prev || playerctl previous
+    songnotify
+    ;;
+  *)
+    echo "Usage: audio up|down|mute|playpause|next|prev"
+    ;;
+esac
+xsetroot -name "$(dwmbar)"
+

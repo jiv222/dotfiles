@@ -1,0 +1,4 @@
+sleep 1
+window_id=$(xdotool search --class dwm)
+transset-df -i $window_id 0.7
+

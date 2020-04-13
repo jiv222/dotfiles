@@ -1,0 +1,102 @@
+!! Xft settings
+Xft.dpi:		    96
+Xft.autohint:		false
+Xft.antialias:		true
+Xft.rgba:		    rgb
+Xft.hinting:		true
+Xft.hintstyle:		hintslight
+Xft:lcdfilter:		lcddefault
+
+!! Transparency (0-1):
+st.alpha: 0.90
+
+!! Colors
+
+! MOLOKAI
+!*foreground:   #f8f8f8
+!*background:   #1b1d1e
+!*color0:       #808080
+!*color8:       #465457
+!*color1:       #d7005f
+!*color9:       #f92672
+!*color2:       #87ff00
+!*color10:      #a6e22e
+!*color3:       #ff8700
+!*color11:      #fd971f
+!*color4:       #acac85
+!*color12:      #c4be89
+!*color5:       #af5fff
+!*color13:      #ae81ff
+!*color6:       #5fd7ff
+!*color14:      #84e0f2
+!*color7:       #f8f8f8
+!*color15:      #ffffff
+
+! DRACULA
+!*foreground:    #F8F8F2
+!*background:    #282A36
+!*color0:        #44475a
+!*color8:        #6272a4
+!*color1:        #FF5555
+!*color9:        #FF6E67
+!*color2:        #50FA7B
+!*color10:       #5AF78E
+!*color3:        #F1FA8C
+!*color11:       #F4F99D
+!*color4:        #BD93F9
+!*color12:       #CAA9FA
+!*color5:        #FF79C6
+!*color13:       #FF92D0
+!*color6:        #8BE9FD
+!*color14:       #9AEDFE
+!*color7:        #BFBFBF
+!*color15:       #F8F8F2
+
+
+! KASUGANO
+*.foreground:   #ffffff
+*.background:   #101010
+*.cursorColor:  #ffffff
+*.color0:       #3d3d3d
+*.color8:       #4d4d4d
+*.color1:       #6673bf
+*.color9:       #899aff
+*.color2:       #3ea290
+*.color10:      #52ad91
+*.color3:       #b0ead9
+*.color11:      #98c9bb
+*.color4:       #31658c
+*.color12:      #477ab3
+*.color5:       #596196
+*.color13:      #7882bf
+*.color6:       #8292b2
+*.color14:      #95a7cc
+*.color7:       #c8cacc
+*.color15:      #edeff2
+
+
+
+! DOOM-ONE
+! *foreground:   #bfbfbf
+! *background:   #282c34
+! *color0:       #1c1f24
+! *color8:       #3f444a
+! *color1:       #ff6c6b
+! *color9:       #ff6c6b
+! *color2:       #98be65
+! *color10:      #98be65
+! *color3:       #da8548
+! *color11:      #da8548
+! *color4:       #51afef
+! *color12:      #51afef
+! *color5:       #c678dd
+! *color13:      #c678dd
+! *color6:       #a9a1e1
+! *color14:      #a9a1e1
+! *color7:       #DFDFDF
+! *color15:      #ffffff
+
+!! St settings
+st.termname:        st
+st.shell:           /usr/bin/bash
+st.font:            mononoki-12

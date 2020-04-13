@@ -1,0 +1,15 @@
+ssid=$(sudo iwgetid -r)
+if test -n "$ssid"
+then
+  n="  "
+else
+  n=""
+fi
+
+b=$(acpi | awk -f ~/.local/share/tools/battery.awk)
+v=$(amixer get Master | tail -1 | awk -f ~/.local/share/tools/volume.awk)
+d=$(date +'%a %d %b, %R %Z')
+
+# result is split on ";", first part is normal second part is centered
+echo "$n$b$v ; $d "
+
