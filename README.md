@@ -10,10 +10,27 @@ While I could have easily switched back to Arch, I loved how fast and simple Voi
 
 Here is some info about my setup:
 
-+ **WM**: [DWM](https://dwm.suckless.org/)
+
 + **OS**: [Bedrock Linux](http://bedrocklinux.org/) --> [more details below](#Bedrock)
-+ **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
++ **WM**: [DWM](https://dwm.suckless.org/)
 + **Terminal**: [st](https://st.suckless.org/)
++ **Compositor**: [picom fork with dual_kawase blur and rounded corners](https://www.reddit.com/r/unixporn/comments/fs8trg/oc_comptonpicom_fork_with_both_tryone144s_dual/)
++ 
+
+## Use my dotfiles
+I use the **GNU Stow** program to backup and restore my dotfiles, so adding them to your system is extremely simple:
+    Simply download stow, clone this repository, and stow can easily create symlinks to each file's proper location.
+    I have them grouped in related categories so, for example, running:
+    ```shell
+    stow suckless
+    ```
+    will symlink everything inside of my suckless directory to a matching tree of files inside your home directory, meaning you will now have a `.suckless` directory
+    inside of your home directory containing my build of dwm, st, dmenu, dwmblocks status bar and a tool I sometimes use to identify names of window classes.
+    
+*Make sure to install the needed dependencies if you want to build any of these for yourself*
+*Also, the dwmblocks statusbar is from [Luke Smith's github](https://github.com/LukeSmithxyz/dwmblocks), just customized for my preferences and my system*
+*There's a good chance,unless you are running a very similar device as me, you'll have to edit some of the scripts and commands both inside dwm and dwmblocks. Look at Luke's repo to understand how dwmblocks works. I have my scripts under `~/.local/bin/dwmblocks/.`*
+
 
 
 ## Bedrock Linux
@@ -36,7 +53,7 @@ When trying to figure out how to get a certain program to work in Void for my un
 installing it on my Void system ended up with a huge error relating to being unable to mount a btrfs subvolume, I got myself a fresh install of void-musl on ext4 and 
 began tweaking.  For such new software, I've been really impressed, and can now install most core packages I need with XBPS, utilize the dead simple and fast runit system,
 and the benefits of musl, while having arch and pacman at my immediate disposal to install the things I simply couldn't on a normal Void system.  Unlike Qubes,
-the integration between OS's, or strata as they are called in Bedrock, is seamless, almost equally as light on system resources, and so much more convenient.  Yes, the 
+the integration between OS's (or "strata" as they are called in Bedrock) is seamless, almost equally as light on system resources, and so much more convenient.  Yes, the 
 security isn't even close to QubesOS's model, it's a trade-off I, currently, am more than happy to make.  I understand bedrock might not be a great fit for every user,
 but for myself, it's as close to perfect as I think I'll ever get, so I figured I'd explain a little of my reasoning as to why I think so, and maybe display some of its
 strengths for other users who are curious.
