@@ -19,11 +19,15 @@ Here is some info about my setup:
 
 ## Use my dotfiles
 I use the **GNU Stow** program to backup and restore my dotfiles, so adding them to your system is extremely simple:
+    
+1.
     Simply download stow, clone this repository, and stow can easily create symlinks to each file's proper location.
     I have them grouped in related categories so, for example, running:
+    
     ```shell
     stow suckless
     ```
+    
     will symlink everything inside of my suckless directory to a matching tree of files inside your home directory, meaning you will now have a `.suckless` directory
     inside of your home directory containing my build of dwm, st, dmenu, dwmblocks status bar and a tool I sometimes use to identify names of window classes.
     
