@@ -15,7 +15,7 @@ Here is some info about my setup:
 + **WM**: [DWM](https://dwm.suckless.org/)
 + **Terminal**: [st](https://st.suckless.org/)
 + **Compositor**: [picom fork with dual_kawase blur and rounded corners](https://www.reddit.com/r/unixporn/comments/fs8trg/oc_comptonpicom_fork_with_both_tryone144s_dual/)
-+ 
+
 
 ## Use my dotfiles
 I use the **GNU Stow** program to backup and restore my dotfiles, so adding them to your system is extremely simple:
@@ -29,12 +29,19 @@ I use the **GNU Stow** program to backup and restore my dotfiles, so adding them
     ```
     
     will symlink everything inside of my suckless directory to a matching tree of files inside your home directory, meaning you will now have a `.suckless` directory
-    inside of your home directory containing my build of dwm, st, dmenu, dwmblocks status bar and a tool I sometimes use to identify names of window classes.
+    inside of your home directory containing my build of dwm, st, dmenu, dwmblocks status bar and a script I sometimes use to identify names of window classes. 
     
-*Make sure to install the needed dependencies if you want to build any of these for yourself*
-*Also, the dwmblocks statusbar is from [Luke Smith's github](https://github.com/LukeSmithxyz/dwmblocks), just customized for my preferences and my system*
-*There's a good chance,unless you are running a very similar device as me, you'll have to edit some of the scripts and commands both inside dwm and dwmblocks. Look at Luke's repo to understand how dwmblocks works. I have my scripts under `~/.local/bin/dwmblocks/.`*
+*The `root` directory is the only one you should probably avoid running stow on, as this is just where I keep system files that I later place somewhere in the root filesystem.*
 
+*Make sure to install the needed dependencies if you want to build any of these for yourself*
+
+*Also, the dwmblocks statusbar is from [Luke Smith's github](https://github.com/LukeSmithxyz/dwmblocks), just customized for my preferences and my system.*
+
+
+*There's a good chance,unless you are running a very similar device as me, you'll have to edit some of the scripts and commands both inside dwm and dwmblocks. Look at Luke's repo to understand how dwmblocks works. I have my scripts under `~/.local/bin/dwmblocks/.`*
+*For example, I use [light](https://github.com/haikarainen/light) to control my laptop's backlight, and have dwm keybindings specifically to do so.*
+
+At the very least, these should serve as a starting ground and/or inspiration, especially if you've never used dwm before.
 
 
 ## Bedrock Linux
