@@ -16,7 +16,7 @@ Here is some info about my setup:
 + **Terminal**: [st](https://st.suckless.org/)
 
 
-##Bedrock Linux
+## Bedrock Linux
 I installed (or "hijacked") my Voidlinux system with Bedrock, then installed Arch alongside Void.  If you're interested in what made me want to do this, and why I think
 it's so great, below I explain how and why I ended up extremely happy with this setup.
 
