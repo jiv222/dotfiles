@@ -19,5 +19,5 @@ xidlehook \
         '' \
     `# Finally, suspend an hour after it locks` \
     --timer 3600 \
-        'systemctl suspend' \
+        'zzz' \
         ''
