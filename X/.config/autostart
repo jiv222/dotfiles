@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# Autostart script ran before starting wm
+
+# Power management
+doas /usr/bin/tlp bat &
+doas /usr/bin/powertop --auto-tune &
+
+xset r rate 300 35 &
+
+xrdb ~/.Xresources &
+redshift &
+~/.fehbg &
+picom -b &
+
+# Screenlock script
+xidlehook.sh &
+
+# Launch dwm status bar
+dwmblocks &
