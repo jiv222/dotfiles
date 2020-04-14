@@ -5,9 +5,9 @@
 ## Aliases
 
 # Change 'ls' to 'exa'
-alias ls='exa -al --color=always --group-directories-first'
+alias la='exa -al --color=always --group-directories-first'
 alias l='exa -F --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'
+alias ls='exa -a --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 
@@ -26,15 +26,15 @@ alias feh="feh --bg-scale"
 alias bat='cat /sys/class/power_supply/BAT0/capacity'
 
 # XBPS Functions
-alias xi='doas xbps-install'
-alias xr='doas xbps-remove -R'
+alias xi='doas /usr/bin/xbps-install'
+alias xr='doas /usr/bin/xbps-remove -R'
 alias xq='xbps-query -Rs'
 
 # Doas fullpath aliases
-alias powertop='doas /bin/powertop'
-alias zzz='doas /bin/zzz'
-alias reboot='doas /bin/reboot'
-alias shutdown='doas /bin/shutdown -h now'
+alias powertop='doas /usr/bin/powertop'
+alias zzz='doas /usr/bin/zzz'
+alias reboot='doas /bedrock/cross/pin/bin/reboot'
+alias shutdown='doas /bedrock/cross/pin/bin/shutdown -h now'
 
 ## Custom Functions
 function extract () {
