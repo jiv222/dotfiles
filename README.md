@@ -14,7 +14,7 @@ This has made installing proprietary and/or glibc-only software extremely conven
 Here is some info about my setup:
 
 + **WM**: [DWM](https://dwm.suckless.org/)
-+ **OS**: [Bedrock Linux](http://bedrocklinux.org/) [more details below](#Bedrock)
++ **OS**: [Bedrock Linux](http://bedrocklinux.org/) --> [more details below](#Bedrock)
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
 + **Terminal**: [st](https://st.suckless.org/)
 
