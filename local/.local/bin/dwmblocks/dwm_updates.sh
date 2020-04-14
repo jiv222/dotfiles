@@ -9,12 +9,12 @@ aurupd=$(checkupdates-aur | wc -l)
 archupd=$(( $pacupd + $aurupd ))
 
 if [ "$archupd" -gt 0 ] && [ "$voidupd" -gt 0 ]; then
-    printf "  A:%sV:%s\n " "$archupd" "$voidupd"
+    printf "  A:%s V:%s  " "$archupd" "$voidupd"
 elif [ "$archupd" -eq 0 ] && [ "$voidupd" -eq 0 ]; then
-    printf "  \n"
+    printf "  "
 elif [ "$archupd" -eq 0 ]; then
-    printf "  V:%s \n" "$voidupd"
+    printf "  V:%s " "$voidupd"
 else
-    printf "  A:%s \n" "$archupd"
+    printf "  A:%s " "$archupd"
 fi
 

@@ -99,4 +99,4 @@ st.alpha: 0.90
 !! St settings
 st.termname:        st
 st.shell:           /usr/bin/bash
-st.font:            mononoki-12
+st.font:            Input Mono Condensed:size=12
