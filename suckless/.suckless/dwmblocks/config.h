@@ -4,7 +4,7 @@ static const Block blocks[] = {
     { " ",     "dwm_bitcoin.sh",       90,                     0},
     { "",       "dwm_resources.sh",     5,                      0},
     { "  ",    "dwm_temp.sh",          5,                      0},
-    { "  ",    "dwm_voidupdates.sh",   1800,                   9},
+    { "",       "dwm_voidupdates.sh",   900,                    9},
     { "",       "dwm_network.sh",       60,                     0},
     { "",       "dwm_volume.sh",        2,                      7},
     { " ",     "dwm_brightness.sh",    3,                      8},
