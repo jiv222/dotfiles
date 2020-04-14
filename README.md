@@ -30,7 +30,7 @@ I have them grouped in related categories so, for example, run:
 stow suckless
 ```
     
-This will symlink everything inside of my suckless directory to a matching tree of files inside your home directory, meaning you will now have a `.suckless` directory
+This will symlink everything inside of my `suckless` directory to a matching tree of files inside your home directory, meaning you will now have a `.suckless` directory
 inside of your home directory containing my build of dwm, st, dmenu, dwmblocks status bar and a script I sometimes use to identify names of window classes. 
     
 * *The `root` directory is the only one you should probably avoid running stow on, as this is just where I keep system files that I later place somewhere in the root filesystem.*
