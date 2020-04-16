@@ -1,3 +1,2 @@
-PRICE=$(curl --silent "https://api.coindesk.com/v1/bpi/currentprice.json" | jq .bpi.USD.rate_float)
-
-printf "%0.2f \n" $PRICE
+PRICE=$(curl --silent "https://api.cryptowat.ch/markets/bitmex/btcusd-perpetual-futures/price" | jq ".result.price")
+printf "%.2f \n" "$PRICE"

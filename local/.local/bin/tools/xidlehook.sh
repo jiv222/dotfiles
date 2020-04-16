@@ -13,11 +13,11 @@ xidlehook \
     --timer 180 \
         'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
         'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-    `# Undim & lock after 15 more seconds` \
+    `# Undim & lock after 30 more seconds` \
     --timer 30 \
         'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; gllock' \
         '' \
-    `# Finally, suspend an hour after it locks` \
-    --timer 3600 \
+    `# Finally, suspend 30 mins after it locks` \
+    --timer 1800 \
         'zzz' \
         ''

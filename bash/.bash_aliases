@@ -36,6 +36,8 @@ alias zzz='doas /usr/bin/zzz'
 alias reboot='doas /bedrock/cross/pin/bin/reboot'
 alias shutdown='doas /bedrock/cross/pin/bin/shutdown -h now'
 
+alias gs='git status'
+
 ## Custom Functions
 function extract () {
     if [ -z "$1" ]; then

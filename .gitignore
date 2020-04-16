@@ -1,0 +1,17 @@
+*.uuid
+**/applications
+*.o
+*.orig
+**/log
+**/state
+**/src
+**/mime
+**/qutebrowser
+**/zathura
+**/plugged
+*.xbel
+**/autoload
+**/TelegramDesktop
+**/libvirt
+**/weechat
+suckless/.suckless/dwm/dwm

@@ -11,10 +11,10 @@ archupd=$(( $pacupd + $aurupd ))
 if [ "$archupd" -gt 0 ] && [ "$voidupd" -gt 0 ]; then
     printf "  A:%s V:%s  " "$archupd" "$voidupd"
 elif [ "$archupd" -eq 0 ] && [ "$voidupd" -eq 0 ]; then
-    printf "  "
+    printf "   "
 elif [ "$archupd" -eq 0 ]; then
-    printf "  V:%s " "$voidupd"
+    printf "  V:%s  " "$voidupd"
 else
-    printf "  A:%s " "$archupd"
+    printf "  A:%s  " "$archupd"
 fi
 

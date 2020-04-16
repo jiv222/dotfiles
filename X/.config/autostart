@@ -5,12 +5,15 @@
 doas /usr/bin/tlp bat &
 doas /usr/bin/powertop --auto-tune &
 
+light -I &
 xset r rate 300 35 &
 
 xrdb ~/.Xresources &
 redshift &
 ~/.fehbg &
 picom -b &
+(spotifyd --no-daemon &)
+
 
 # Screenlock script
 /home/four/.local/bin/tools/xidlehook.sh &
