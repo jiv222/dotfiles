@@ -47,8 +47,7 @@ set ignorecase
 "----------------------------------------------
 " Misc
 "----------------------------------------------
-set number
-set relativenumber
+set number relativenumber
 set ruler
 set mouse=a
 set wrap
@@ -74,23 +73,12 @@ set noswapfile
 set nowritebackup
 
 "----------------------------------------------
-" Dracula Theme
-"----------------------------------------------
-"let g:dracula_colorterm=0
-"let g:dracula_italic=0
-
-"----------------------------------------------
 " Airline
 "----------------------------------------------
 let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline_powerline_fonts=1
-
-"----------------------------------------------
-" Colorscheme
-"----------------------------------------------
-"colorscheme dracula
 
 "----------------------------------------------
 " Paste Settings
@@ -128,7 +116,5 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"----------------------------------------------
-" Colorizer
-"----------------------------------------------
-let g:colorizer_auto_color = 1
+" Add mouse support to alacritty
+set ttymouse=sgr

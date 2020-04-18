@@ -4,7 +4,7 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 16;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
@@ -34,7 +34,9 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* class                instance    title       tags mask   isfloating  monitor */
+    { "Blueman-manager",    NULL,       NULL,       1 << 7,     1,          -1 },
     { "TelegramDesktop",    NULL,       NULL,       1 << 5,     1,          -1 },
+	{ "Pavucontrol",        NULL,       NULL,       0,          1,          -1 },
 	{ "Virt-manager",       NULL,       NULL,       1 << 7,     1,          -1 },
     { NULL,     NULL,       "win10 on QEMU/KVM",    1 << 8,     1,          -1 },
 };
@@ -65,14 +67,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] =     { "dmenu_run", "-c", "-l", "20", "-m", dmenumon, NULL };
-static const char *termcmd[]  =     { "st", NULL };
+static const char *termcmd[]  =     { "alacritty", NULL };
 static const char *brightup[] =     { "/home/four/.local/bin/tools/light.sh", "up", NULL };
 static const char *brightdown[] =   { "/home/four/.local/bin/tools/light.sh", "down", NULL };
 static const char *volup[] =        { "/home/four/.local/bin/tools/volume.sh", "up", NULL };
 static const char *voldown[] =      { "/home/four/.local/bin/tools/volume.sh", "down", NULL };
 static const char *volmute[] =      { "/home/four/.local/bin/tools/volume.sh", "toggle", NULL };
-static const char *virtmanager[] = { "virt-manager", NULL };
-static const char *gotop[] =        { "st", "-e", "gotop", "-f", NULL };
+static const char *virtmanager[] =  { "virt-manager", NULL };
+static const char *gotop[] =        { "alacritty", "-e", "gotop", "-pf", NULL };
+static const char *bluetoothcmd[] = { "blueman-manager", NULL };
+static const char *pavucontrol[] =  { "pavucontrol", NULL };
 
 static Key keys[] = {
 	/* modifier                     key         function        argument */
@@ -109,6 +113,8 @@ static Key keys[] = {
     /* App shortcuts */
     { MODKEY|ShiftMask,             XK_v,       spawn,          {.v = virtmanager } },
     { MODKEY|ShiftMask,             XK_t,       spawn,          {.v = gotop } },
+    { MODKEY|ShiftMask,             XK_b,       spawn,          {.v = bluetoothcmd } },
+    { MODKEY|ShiftMask,             XK_a,       spawn,          {.v = pavucontrol } },
 	TAGKEYS(                        XK_1,                       0)
 	TAGKEYS(                        XK_2,                       1)
 	TAGKEYS(                        XK_3,                       2)

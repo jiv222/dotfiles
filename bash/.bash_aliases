@@ -11,7 +11,7 @@ alias ls='exa -a --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 
-# Add default flags
+# Add default options
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias df='df -h'
@@ -22,6 +22,7 @@ alias free='free -h'
 alias cal="calcurse"
 alias top="htop"
 alias feh="feh --bg-scale"
+alias xset='xset r rate 300 35'
 
 alias bat='cat /sys/class/power_supply/BAT0/capacity'
 
