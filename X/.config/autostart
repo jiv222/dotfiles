@@ -2,19 +2,19 @@
 # Autostart script ran before starting wm
 
 # Power management
-# doas /usr/bin/tlp bat &
-# doas /usr/bin/powertop --auto-tune &
+sudo tlp bat &
+sudo powertop --auto-tune &
 
-doas /usr/bin/light -I &
+sudo light -I &
 xset r rate 300 35 &
 
 xrdb ~/.Xresources &
-# redshift &
+redshift &
 ~/.fehbg &
-# picom -b &
+picom -b &
 
 # Screenlock script
-/home/four/.local/bin/tools/xidlehook.sh &
+# /home/four/.local/bin/tools/xidlehook.sh &
 
 # Launch dwm status bar
-/bedrock/cross/bin/dwmblocks &
+dwmblocks &

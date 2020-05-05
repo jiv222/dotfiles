@@ -1,4 +1,3 @@
-#xrandr --setprovideroutputsource modesetting NVIDIA-0
-#xrandr --auto
-
+#!/bin/sh
+ 
 exec dwm

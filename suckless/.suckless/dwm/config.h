@@ -15,7 +15,7 @@ static const int horizpadbar        = 2;        /* horizontal status bar padding
 static const int vertpadbar         = 2;        /* vertical status bar padding */
 static const char *fonts[]          = { 
     "Input Mono Condensed:size=11:antialias=true:autohint=true",
-    "FontAwesome:style=Regular:size=11:antialias=true:autohint=true"
+    "FontAwesome:style=Regular:size=12:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "mononoki:size=10";
 static const char col_gray1[]       = "#1B1B1B";

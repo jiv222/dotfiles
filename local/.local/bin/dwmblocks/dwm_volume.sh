@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to format and output current volume level
 
-VOL="$(volume.sh status)"
+VOL="$(~/.local/bin/tools/volume.sh status)"
 VOL=${VOL%.*}
 
 if [[ $VOL -gt 50 ]]; then
