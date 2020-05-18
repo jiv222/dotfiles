@@ -15,9 +15,9 @@ xidlehook \
         'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
     `# Undim & lock after 30 more seconds` \
     --timer 30 \
-        'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; gllock' \
+        'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; betterlockscreen -l dimblur' \
         '' \
-    `# Finally, suspend 30 mins after it locks` \
-    --timer 1800 \
-        'zzz' \
+    `# Finally, suspend 10 mins after it locks` \
+    --timer 600 \
+        'systemctl suspend' \
         ''

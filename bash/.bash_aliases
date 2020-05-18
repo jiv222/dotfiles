@@ -7,7 +7,7 @@
 # Change 'ls' to 'exa'
 alias la='exa -al --color=always --group-directories-first'
 alias l='exa -F --color=always --group-directories-first'
-alias ls='exa -a --color=always --group-directories-first'
+alias ls='exa --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 

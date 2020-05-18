@@ -14,7 +14,7 @@ redshift &
 picom -b &
 
 # Screenlock script
-# /home/four/.local/bin/tools/xidlehook.sh &
+/home/four/.local/bin/tools/xidlehook.sh &
 
 # Launch dwm status bar
 dwmblocks &
