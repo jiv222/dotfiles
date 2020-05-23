@@ -5,9 +5,9 @@ VOL="$(~/.local/bin/tools/volume.sh status)"
 VOL=${VOL%.*}
 
 if [[ $VOL -gt 50 ]]; then
-    echo "  $VOL% "
+    echo "  $VOL%  "
 elif [[ $VOL -gt 10 ]]; then
-    echo "  $VOL% "
+    echo "  $VOL%  "
 else
-    echo "  $VOL% "
+    echo "  $VOL%  "
 fi

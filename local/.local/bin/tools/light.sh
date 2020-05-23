@@ -8,7 +8,8 @@ BRI=$(light)
 case "$1" in
     up) sudo light -A "$NUM" && pkill -RTMIN+8 dwmblocks ;;
     down) sudo light -U "$NUM" && pkill -RTMIN+8 dwmblocks ;;
+    status) echo "$BRI%" ;;
     *) echo "Usage: audio.sh [up|down] <value>" ;;
 esac
 
-doas /usr/bin/light -O
+sudo light -O
