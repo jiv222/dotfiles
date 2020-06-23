@@ -33,12 +33,12 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-	/* class                instance    title       tags mask   isfloating  monitor */
-    { "Blueman-manager",    NULL,       NULL,       1 << 7,     1,          -1 },
-    { "TelegramDesktop",    NULL,       NULL,       1 << 5,     1,          -1 },
-	{ "Pavucontrol",        NULL,       NULL,       0,          1,          -1 },
-	{ "Virt-manager",       NULL,       NULL,       1 << 7,     1,          -1 },
-    { NULL,     NULL,       "win10 on QEMU/KVM",    1 << 8,     1,          -1 },
+	/* class                instance    title       tags mask   iscentered      isfloating  monitor */
+    { "Blueman-manager",    NULL,       NULL,       1 << 7,     1,              1,          -1 },
+    { "TelegramDesktop",    NULL,       NULL,       1 << 5,     1,              1,          -1 },
+	{ "Pavucontrol",        NULL,       NULL,       0,          1,              1,          -1 },
+	{ "Virt-manager",       NULL,       NULL,       1 << 7,     1,              1,          -1 },
+    { NULL,     NULL,       "win10 on QEMU/KVM",    1 << 8,     1,              1,          -1 },
 };
 
 /* layout(s) */
@@ -67,16 +67,21 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] =     { "dmenu_run", "-c", "-l", "20", "-m", dmenumon, NULL };
-static const char *termcmd[]  =     { "alacritty", NULL };
+static const char *termcmd[]  =     { "st", NULL };
 static const char *brightup[] =     { "/home/four/.local/bin/tools/light.sh", "up", NULL };
 static const char *brightdown[] =   { "/home/four/.local/bin/tools/light.sh", "down", NULL };
 static const char *volup[] =        { "/home/four/.local/bin/tools/volume.sh", "up", NULL };
 static const char *voldown[] =      { "/home/four/.local/bin/tools/volume.sh", "down", NULL };
 static const char *volmute[] =      { "/home/four/.local/bin/tools/volume.sh", "toggle", NULL };
 static const char *virtmanager[] =  { "virt-manager", NULL };
-static const char *gotop[] =        { "alacritty", "-e", "gotop", "-pf", NULL };
+static const char *gotop[] =        { "st", "-e", "gotop", "-pf", NULL };
 static const char *bluetoothcmd[] = { "blueman-manager", NULL };
 static const char *pavucontrol[] =  { "pavucontrol", NULL };
+static const char *passmenu[] =     { "passmenu", NULL };
+static const char *suspendcmd[] =   { "sudo", "zzz", NULL };
+static const char *filescmd[] =     { "st", "-e", "/home/four/.config/vifm/scripts/vifmrun", NULL };
+static const char *scrnshotcmd[] =  { "/home/four/.local/bin/dmenu/dmenu-maim.sh", NULL };
+static const char *schoolmenu[] =   { "bash", "/home/four/.local/bin/dmenu/dmenu_courses.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key         function        argument */
@@ -103,6 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,   tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,  tagmon,         {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_z,       spawn,          {.v = suspendcmd } },
     /* Volume Keys */
     { 0, XF86XK_AudioMute,                      spawn,          {.v = volmute } },
     { 0, XF86XK_AudioLowerVolume,               spawn,          {.v = voldown } },
@@ -111,10 +117,14 @@ static Key keys[] = {
     { 0, XF86XK_MonBrightnessUp,                spawn,          {.v = brightup } },
     { 0, XF86XK_MonBrightnessDown,              spawn,          {.v = brightdown } },
     /* App shortcuts */
-    { MODKEY|ShiftMask,             XK_v,       spawn,          {.v = virtmanager } },
-    { MODKEY|ShiftMask,             XK_t,       spawn,          {.v = gotop } },
-    { MODKEY|ShiftMask,             XK_b,       spawn,          {.v = bluetoothcmd } },
-    { MODKEY|ShiftMask,             XK_a,       spawn,          {.v = pavucontrol } },
+    { MODKEY|Mod1Mask,              XK_v,       spawn,          {.v = virtmanager } },
+    { MODKEY|Mod1Mask,              XK_t,       spawn,          {.v = gotop } },
+    { MODKEY|Mod1Mask,              XK_b,       spawn,          {.v = bluetoothcmd } },
+    { MODKEY|Mod1Mask,              XK_a,       spawn,          {.v = pavucontrol } },
+    { MODKEY|Mod1Mask,              XK_p,       spawn,          {.v = passmenu } },
+    { MODKEY|Mod1Mask,              XK_f,       spawn,          {.v = filescmd } },
+    { MODKEY|Mod1Mask,              XK_s,       spawn,          {.v = scrnshotcmd } },
+    { MODKEY|Mod1Mask,              XK_d,       spawn,          {.v = schoolmenu } },
 	TAGKEYS(                        XK_1,                       0)
 	TAGKEYS(                        XK_2,                       1)
 	TAGKEYS(                        XK_3,                       2)

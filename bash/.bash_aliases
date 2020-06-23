@@ -38,6 +38,9 @@ alias reboot='doas /bedrock/cross/pin/bin/reboot'
 alias shutdown='doas /bedrock/cross/pin/bin/shutdown -h now'
 
 alias gs='git status'
+alias gb='git branch'
+alias gc='git commit'
+alias vifm='bash ~/.config/vifm/scripts/vifmrun'
 
 ## Custom Functions
 function extract () {

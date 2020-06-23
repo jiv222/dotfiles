@@ -3,7 +3,7 @@
 #
 
 # Add ~/.local/bin to PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$HOME/Scripts:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 # Shell Options
 shopt -s checkwinsize

@@ -1,6 +1,0 @@
-$include /etc/inputrc
-set editing-mode vi
-
-C-L: clear-screen
-C-A: beginning-of-line
-
