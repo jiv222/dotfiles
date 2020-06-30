@@ -51,26 +51,26 @@ st.alpha: 0.90
 !*color7:        #BFBFBF
 !*color15:       #F8F8F2
 
-! KASUGANO !!
-*.foreground:   #ffffff
-*.background:   #101010
-*.cursorColor:  #ffffff
-*.color0:       #3d3d3d
-*.color8:       #4d4d4d
-*.color1:       #6673bf
-*.color9:       #899aff
-*.color2:       #3ea290
-*.color10:      #52ad91
-*.color3:       #b0ead9
-*.color11:      #98c9bb
-*.color4:       #31658c
-*.color12:      #477ab3
-*.color5:       #596196
-*.color13:      #7882bf
-*.color6:       #8292b2
-*.color14:      #95a7cc
-*.color7:       #c8cacc
-*.color15:      #edeff2
+!! KASUGANO !!
+! *.foreground:   #ffffff
+! *.background:   #101010
+! *.cursorColor:  #ffffff
+! *.color0:       #3d3d3d
+! *.color8:       #4d4d4d
+! *.color1:       #6673bf
+! *.color9:       #899aff
+! *.color2:       #3ea290
+! *.color10:      #52ad91
+! *.color3:       #b0ead9
+! *.color11:      #98c9bb
+! *.color4:       #31658c
+! *.color12:      #477ab3
+! *.color5:       #596196
+! *.color13:      #7882bf
+! *.color6:       #8292b2
+! *.color14:      #95a7cc
+! *.color7:       #c8cacc
+! *.color15:      #edeff2
 
 ! DOOM-ONE
 ! *foreground:   #bfbfbf
@@ -96,3 +96,4 @@ st.alpha: 0.90
 st.termname:        st-256color
 st.shell:           /usr/bin/bash
 st.font:            Input Mono Condensed:size=12
+

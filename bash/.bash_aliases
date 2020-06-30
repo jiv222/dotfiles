@@ -39,8 +39,13 @@ alias shutdown='doas /bedrock/cross/pin/bin/shutdown -h now'
 
 alias gs='git status'
 alias gb='git branch'
-alias gc='git commit'
+alias gc='git commit -m'
+alias gch='git checkout'
 alias vifm='bash ~/.config/vifm/scripts/vifmrun'
+
+# Bedrock specific commands
+alias archmake='doas strat -r arch make'
+alias quant='cd /home/four/Projects/Quantum_Boady/ && strat -r ubuntu bash'
 
 ## Custom Functions
 function extract () {

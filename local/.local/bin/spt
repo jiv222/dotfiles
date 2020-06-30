@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+[ ! $(pgrep "spotifyd") ] && spotifyd --no-daemon > /dev/null 2>&1 &
+
+spotify-tui

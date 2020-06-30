@@ -28,7 +28,7 @@ call plug#end()
 "----------------------------------------------
 syntax on
 filetype on
-set background=dark
+"set background=dark
 set t_Co=256
 set hidden
 set noshowmode
@@ -75,7 +75,7 @@ set nowritebackup
 "----------------------------------------------
 " Airline
 "----------------------------------------------
-let g:airline_theme='dracula'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline_powerline_fonts=1
