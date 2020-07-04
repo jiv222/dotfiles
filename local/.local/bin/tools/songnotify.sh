@@ -1,4 +1,4 @@
-#/usr/bin/bash
+#!/usr/bin/bash
 
 # Signal for dwmblocks to update
 kill -46 $(pidof dwmblocks)
