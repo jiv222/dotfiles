@@ -47,7 +47,7 @@ set norunexec
 " Selected color scheme
 " The following line will cause issues if using vifm.vim with regular vim.
 " Either use neovim or comment out the following line.
-colorscheme colors
+colorscheme Evangelion
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -87,6 +87,10 @@ endif
 
 " :mark mark /full/directory/path [filename]
 mark h ~/
+mark a ~/Torrents/Anime
+mark d ~/School/current
+mark s ~/.suckless
+mark l ~/.local
 
 " ------------------------------------------------------------------------------
 
@@ -158,7 +162,7 @@ filextype *.djvu
 " Audio
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
         \ {View using cmus}
-        \ st -e cmus %f &,
+        \ mpv %f &,
         \ {Play using ffplay}
         \ ffplay -nodisp -autoexit %c,
         \ {Play using MPlayer}

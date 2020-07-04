@@ -8,12 +8,12 @@ Xft.hintstyle:		hintslight
 Xft:lcdfilter:		lcddefault
 
 !! Transparency (0-1):
-st.alpha: 0.90
+!! st.alpha: 0.90
 
 
 ! MOLOKAI
 !*foreground:   #f8f8f8
-!*background:   #1b1d1e
+!*background:   #323a46
 !*color0:       #808080
 !*color8:       #465457
 !*color1:       #d7005f
@@ -76,7 +76,7 @@ st.alpha: 0.90
 ! *foreground:   #bfbfbf
 ! *background:   #282c34
 ! *color0:       #1c1f24
-! *color8:       #3f444a
+*color8:       #2c1118
 ! *color1:       #ff6c6b
 ! *color9:       #ff6c6b
 ! *color2:       #98be65
@@ -95,5 +95,5 @@ st.alpha: 0.90
 !! St settings
 st.termname:        st-256color
 st.shell:           /usr/bin/bash
-st.font:            Input Mono Condensed:size=12
+st.font:            Terminus:style=Regular:size=12
 

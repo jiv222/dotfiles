@@ -1,5 +1,3 @@
-set nocompatible
-
 " ---------------------------------------------
 " Install vim-plug
 " ---------------------------------------------
@@ -13,14 +11,14 @@ endif
 " Plugins
 " ---------------------------------------------
 call plug#begin('~/.vim/plugged')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'dracula/vim'
     Plug 'preservim/nerdtree'
     Plug 'ap/vim-css-color'
     Plug 'lervag/vimtex'
     Plug 'sirver/ultisnips'
     Plug 'KeitaNakamura/tex-conceal.vim'
+    Plug 'itchyny/lightline.vim'
+    Plug 'idbrii/AsyncCommand'
+    Plug 'mnick/vim-pomodoro'
 call plug#end()
 
 "----------------------------------------------
@@ -28,18 +26,15 @@ call plug#end()
 "----------------------------------------------
 syntax on
 filetype on
-"set background=dark
 set t_Co=256
 set hidden
 set noshowmode
-set noshowcmd
 set backspace=indent,eol,start
 
 "----------------------------------------------
 " Font
 "----------------------------------------------
 set encoding=utf-8
-set guifont=
 set nolazyredraw
 set smartcase
 set ignorecase
@@ -53,6 +48,7 @@ set mouse=a
 set wrap
 set hlsearch
 set incsearch
+set laststatus=2
 
 "----------------------------------------------
 " Tabs
@@ -64,6 +60,7 @@ set expandtab
 set smarttab
 set shiftround
 set autoindent
+filetype plugin indent on
 
 "----------------------------------------------
 " Backups
@@ -71,14 +68,6 @@ set autoindent
 set nobackup
 set noswapfile
 set nowritebackup
-
-"----------------------------------------------
-" Airline
-"----------------------------------------------
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#formatter='unique_tail_improved'
-let g:airline_powerline_fonts=1
 
 "----------------------------------------------
 " Paste Settings
@@ -115,6 +104,11 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 "----------------------------------------------
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" Lightline
+let g:lightline = {
+    \ 'colorscheme': 'evangelion',
+    \ }
 
 " Add mouse support to alacritty
 set ttymouse=sgr

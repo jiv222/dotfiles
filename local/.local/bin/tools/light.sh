@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Script to control backlight brightness with light
 
 NUM="${2:-10}"
@@ -6,10 +6,11 @@ NUM="${2:-10}"
 BRI=$(light)
 
 case "$1" in
-    up) sudo light -A "$NUM" && pkill -RTMIN+8 dwmblocks ;;
-    down) sudo light -U "$NUM" && pkill -RTMIN+8 dwmblocks ;;
+    up) doas /usr/bin/light -A "$NUM"; pkill -RTMIN+8 dwmblocks ;;
+    down) doas /usr/bin/light -U "$NUM"; pkill -RTMIN+8 dwmblocks ;;
     status) echo "$BRI%" ;;
-    *) echo "Usage: audio.sh [up|down] <value>" ;;
+    *) echo "Usage: light.sh [up|down|status] <value>" ;;
 esac
 
-sudo light -O
+
+doas /usr/bin/light -O
