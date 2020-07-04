@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+# Output only icon if no current player
+pidof spotifyd > /dev/null
+[ $? -eq 1 ] && echo " " && exit 0
+
+# Maximum length of song title before truncating
+MAX_TITLE_LENGTH=15
+
+# Collect metadata
+# Call playerctl once for all data; split string into array
+metadata="$(playerctl metadata --format "{{ status }};{{ artist }};{{ title }}")"
+IFS=';' read -r -a meta_array <<< "$metadata"
+
+status="${meta_array[0]}"
+artist="$(echo "${meta_array[1]}" | cut -d',' -f1)"  # Include first artist only
+title="$(echo -e "${meta_array[2]}" | sed -e 's/[[:space:]]$//')"
+
+# Generate output and trim to MAX_TITLE_LENGTH 
+len=${#title}
+stext="$([ $len -gt $MAX_TITLE_LENGTH ] && echo "${artist}: ${title:0:15}.." || echo "$artist: $title")"
+
+# Select icon depending on player status
+case "$status" in
+	Playing) icon="" ;;
+	*) icon="" ;;
+esac
+
+# Handle click events
+case $BLOCK_BUTTON in
+	1) playerctl --all-players play-pause && pkill -RTMIN+12 dwmblocks ;;
+	2) playerctl --all-players previous && pkill -RTMIN+12 dwmblocks ;;
+	3) playerctl --all-players next && pkill -RTMIN+12 dwmblocks ;;
+esac
+
+# Print output to bar
+echo -e " $icon$stext "
+

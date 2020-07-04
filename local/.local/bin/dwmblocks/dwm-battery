@@ -1,0 +1,31 @@
+#!/bin/bash
+
+battery="/sys/class/power_supply/BAT0"
+capacity=$(cat "$battery"/capacity 2>/dev/null) || break
+state=$(cat "$battery"/status 2>/dev/null)
+
+# change icon depending on capacity
+discharge_status() {
+    if [ $capacity -gt 75 ]; then
+        STATUS=" "
+    elif [ $capacity -gt 40 ]; then
+        STATUS=" "
+    elif [ $capacity -gt 20 ]; then
+        STATUS=" "
+    else
+        STATUS=" "
+    fi
+}
+        
+# If it is discharging and 25% or less, we will add a ❗ as a warning.
+[ "$capacity" -le 20 ] && warn=""
+
+case "$state" in
+    Full) STATUS=" " ;;
+    Discharging) discharge_status ;;
+    Charging) STATUS=" " ;;
+esac
+
+printf "%s%s%s%% \n" "$STATUS" "$warn" "$capacity"
+unset warn
+

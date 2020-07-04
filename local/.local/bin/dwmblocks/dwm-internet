@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Show wifi and percent strength
+
+case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+	down) wifiicon=" " ;;
+	up) strength="$(awk '/^\s*w/ { print int($3 * 100 / 70) }' /proc/net/wireless)" 
+        if [ $strength -gt 75 ]; then
+            wifiicon="${strength}% "
+        elif [ $strength -gt 50 ]; then
+            wifiicon="${strength}% "
+        elif [ $strength -gt 25 ]; then
+            wifiicon="${strength}% "
+        else 
+            wifiicon="${strength}% "
+        fi
+        ;;
+esac
+
+case $BLOCK_BUTTON in 
+    1) "$TERMINAL" -e doas /usr/bin/nmtui; pkill -RTMIN+4 dwmblocks ;;
+esac
+
+printf " %s\n " "$wifiicon"
