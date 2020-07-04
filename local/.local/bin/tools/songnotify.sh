@@ -11,8 +11,12 @@ kill -46 $(pidof dwmblocks)
 rm ~/.config/spotifyd/tmp/AlbumArt.png
 
 # Get song metadata
-artist="$(playerctl metadata --format "{{ artist }}")"
-album="$(playerctl metadata --format "{{ album }}")"
+metadata="$(playerctl metadata --format "{{ artist }};{{ album }}")"
+IFS=';' read -r -a meta_array <<< "$metadata"
+
+arist="${meta_array[0]}"
+album="${meta_array[0]}"
+
 # Get album art for icon
 sacad "${artist}" "${album}" 90 ~/.config/spotifyd/tmp/AlbumArt.png 
 
