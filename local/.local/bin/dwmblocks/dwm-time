@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TIME="$(date "+%X")"
-TIME="${TIME}"
-echo " $TIME "
+TIME="$(date "+%H:%M:%S")"
+TIME="${TIME}"
+echo " $TIME"
 
 case $BLOCK_BUTTON in
     *) exit 0 ;;

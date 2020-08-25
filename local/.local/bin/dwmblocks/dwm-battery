@@ -7,25 +7,25 @@ state=$(cat "$battery"/status 2>/dev/null)
 # change icon depending on capacity
 discharge_status() {
     if [ $capacity -gt 75 ]; then
-        STATUS=" "
+        STATUS=""
     elif [ $capacity -gt 40 ]; then
-        STATUS=" "
+        STATUS=""
     elif [ $capacity -gt 20 ]; then
-        STATUS=" "
+        STATUS=""
     else
-        STATUS=" "
+        STATUS=""
     fi
 }
         
 # If it is discharging and 25% or less, we will add a ❗ as a warning.
-[ "$capacity" -le 20 ] && warn=""
+[ "$capacity" -le 20 ] && [ "$state" == "Discharging" ] && warn=""
 
 case "$state" in
-    Full) STATUS=" " ;;
+    Full) STATUS="" ;;
     Discharging) discharge_status ;;
-    Charging) STATUS=" " ;;
+    Charging) STATUS="" ;;
 esac
 
-printf "%s%s%s%% \n" "$STATUS" "$warn" "$capacity"
+printf " %s%s%s%% \n " "$STATUS" "$warn" "$capacity"
 unset warn
 

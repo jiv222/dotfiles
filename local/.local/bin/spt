@@ -1,5 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
+# Launch spotifyd and spotify-tui
 
-[ ! $(pgrep "spotifyd") ] && spotifyd --no-daemon > /dev/null 2>&1 &
+[ $(pgrep "spotifyd") ] || spotifyd --no-daemon > /home/four/.local/var/log/spotifyd/log 2>&1 &
 
 spotify-tui

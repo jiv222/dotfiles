@@ -23,10 +23,10 @@ updateprice() { ping -q -c 1 1.1.1.1 >/dev/null 2>&1 &&
 	updateprice
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -g 100x40 -t "BTC/USD" -e less -SfR "$chartfile_w" ;;
+	1) setsid "$TERMINAL" -g 100x41 -t "BTC/USD 1W" -e less -SfR "$chartfile_w" ;;
 	2) notify-send -u low "$3 Updating..." "Updating $2 price..." &&
 		updateprice "$1" && notify-send "$3 Update complete." "$2 price is now \$$(printf "%0.2f" $(cat "$pricefile"))" ;;
-	3) setsid "$TERMINAL" -g 100x40 -t "BTC/USD" -e less -SfR "$chartfile_d" ;;
+	3) setsid "$TERMINAL" -g 100x41 -t "BTC/USD 1D" -e less -SfR "$chartfile_d" ;;
 esac
 
 printf " $3 $%0.2f " "$(cat "$pricefile")"

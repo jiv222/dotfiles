@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 # Script to format and output current volume level
 
-VOL="$(volume.sh status)"
+isMuted="$(pamixer --get-volume-human)"
+[ "$isMuted" == "muted" ] && echo " " && exit 0
+VOL="$(pamixer --get-volume)"
 VOL=${VOL%.*}
 
 if [ $VOL -gt 80 ]; then
@@ -10,10 +12,8 @@ elif [ $VOL -gt 50 ]; then
     echo " $VOL% "
 elif [ $VOL -gt 25 ]; then
     echo " $VOL% "
-elif [ $VOL -gt 0 ]; then
-    echo " $VOL% "
 else
-    echo " "
+    echo " $VOL% "
 fi
 
 case $BLOCK_BUTTON in

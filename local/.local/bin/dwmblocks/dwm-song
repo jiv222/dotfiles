@@ -2,7 +2,7 @@
 
 # Output only icon if no current player
 pidof spotifyd > /dev/null
-[ $? -eq 1 ] && echo " " && exit 0
+[ $? -eq 1 ] && echo "" && exit 0
 
 # Maximum length of song title before truncating
 MAX_TITLE_LENGTH=15

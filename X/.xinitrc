@@ -1,3 +1,3 @@
 #!/bin/sh
  
-exec dwm
+exec dbus-run-session dwm

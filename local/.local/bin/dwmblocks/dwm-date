@@ -5,5 +5,5 @@ case $BLOCK_BUTTON in
 esac
 
 DATE="$(date "+%a.%d.%b" | tr '[:lower:]' '[:upper:]')"
-DATE=" ${DATE} "
-echo "$DATE"
+DATE="${DATE}"
+echo " $DATE "

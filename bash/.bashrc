@@ -24,7 +24,9 @@ complete -cf doas
 
 PS1="[\u@\h \W]\$ "
 
-# >>> conda initialize >>>
+# Random color script
+/home/four/.local/bin/color-scripts.sh random
+
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('strat quantum /home/four/.local/share/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -37,5 +39,4 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 

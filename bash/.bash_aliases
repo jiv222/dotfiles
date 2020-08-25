@@ -4,14 +4,16 @@
 
 ## Aliases
 
-# Change 'ls' to 'exa'
+alias xi='doas /usr/bin/xbps-install'
+alias xr='doas /usr/bin/xbps-remove -R'
+alias xq='xbps-query -Rs'
+
 alias la='exa -al --color=always --group-directories-first'
 alias l='exa -F --color=always --group-directories-first'
 alias ls='exa --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 
-# Add default options
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias df='df -h'
@@ -23,29 +25,25 @@ alias cal="calcurse"
 alias top="htop"
 alias feh="feh --bg-scale"
 alias xset='xset r rate 300 35'
-
-alias bat='cat /sys/class/power_supply/BAT0/capacity'
-
-# XBPS Functions
-alias xi='doas /usr/bin/xbps-install'
-alias xr='doas /usr/bin/xbps-remove -R'
-alias xq='xbps-query -Rs'
-
-# Doas fullpath aliases
+alias battery='cat /sys/class/power_supply/BAT0/capacity'
+alias vim='nvim'
+alias usv="vsv -d ~/.local/var/service"
 alias powertop='doas /usr/bin/powertop'
 alias zzz='doas /usr/bin/zzz'
 alias reboot='doas /bedrock/cross/pin/bin/reboot'
 alias shutdown='doas /bedrock/cross/pin/bin/shutdown -h now'
-
 alias gs='git status'
 alias gb='git branch'
 alias gc='git commit -m'
 alias gch='git checkout'
 alias vifm='bash ~/.config/vifm/scripts/vifmrun'
+alias mutt='neomutt'
 
 # Bedrock specific commands
 alias archmake='doas strat -r arch make'
 alias quant='cd /home/four/Projects/Quantum_Boady/ && strat -r ubuntu bash'
+alias x="strat arch startx"
+#alias startx="strat arch startx"
 
 ## Custom Functions
 function extract () {
