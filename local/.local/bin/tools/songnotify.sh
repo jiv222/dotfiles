@@ -5,7 +5,7 @@ kill -46 $(pidof dwmblocks)
 
 # Do not notify if the song hasn't been changed
 # i.e. play/pause
-[ "$PLAYER_EVENT" == "change" ] || { printf '%s\n' "Only notify for new songs." >&2; exit 5; }
+#[ "$PLAYER_EVENT" == "change" ] || { printf '%s\n' "Only notify for new songs." >&2; exit 5; }
 
 # Delete previous album art
 rm ~/.cache/AlbumArt.png

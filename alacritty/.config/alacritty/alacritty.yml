@@ -34,7 +34,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 25
+    x: 20
     y: 20
 
   # Spread additional padding evenly around the terminal content.
@@ -97,7 +97,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: lemon
+    family: Iosevka
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -108,7 +108,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: lemon
+    family: Iosevka
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -119,7 +119,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: lemon
+    family: Iosevka
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -130,19 +130,19 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Input Mono Condensed
+    family: cherry
 
     # The `style` can be specified to pick a specific face.
-    style: Bold Italic
+    style: Regular
 
   # Point size
-  size: 14.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: -1
-    y: -1
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -174,8 +174,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#060606'
-    foreground: '#eaeaea'
+    background: '#1e1c31'
+    foreground: '#cbe3e7'
 
     # Bright and dim foreground colors
     #
@@ -204,25 +204,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#3d3d3d'
-    red:     '#6673bf'
-    green:   '#3ea290'
-    yellow:  '#b0ead9'
-    blue:    '#31658c'
-    magenta: '#596196'
-    cyan:    '#8292b2'
-    white:   '#c8cacc'
+    black:   '#565575'
+    red:     '#ff8080'
+    green:   '#95ffa4'
+    yellow:  '#ffe9aa'
+    blue:    '#91ddff'
+    magenta: '#c991e1'
+    cyan:    '#aaffe4'
+    white:   '#cbe3e7'
 
   # Bright colors
   bright:
-    black:   '#4d4d4d'
-    red:     '#899aff'
-    green:   '#52ad91'
-    yellow:  '#98c9bb'
-    blue:    '#477ab3'
-    magenta: '#7882bf'
-    cyan:    '#95a7cc'
-    white:   '#edeff2'
+    black:   '#100e23'
+    red:     '#ff5458'
+    green:   '#62d196'
+    yellow:  '#ffb378'
+    blue:    '#65b2ff'
+    magenta: '#906cff'
+    cyan:    '#63f2f1'
+    white:   '#a6b3cc'
 
   # Dim colors
   #

@@ -2,13 +2,21 @@
 # ~/.bashrc
 #
 
-# Add ~/.local/bin to PATH
-export PATH="$PATH:$HOME/Scripts:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # Shell Options
 shopt -s checkwinsize
 shopt -s autocd
 shopt -s cdspell
+shopt -s histappend
 set -o noclobber
 set -o vi
 
@@ -25,18 +33,6 @@ complete -cf doas
 PS1="[\u@\h \W]\$ "
 
 # Random color script
-/home/four/.local/bin/color-scripts.sh random
+bash /home/four/.local/bin/color-scripts.sh random
 
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('strat quantum /home/four/.local/share/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/four/.local/share/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/four/.local/share/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/four/.local/share/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
+eval "$(starship init bash)"

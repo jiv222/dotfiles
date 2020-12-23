@@ -8,7 +8,7 @@ alias xi='doas /usr/bin/xbps-install'
 alias xr='doas /usr/bin/xbps-remove -R'
 alias xq='xbps-query -Rs'
 
-alias la='exa -al --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'
 alias l='exa -F --color=always --group-directories-first'
 alias ls='exa --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
@@ -42,14 +42,16 @@ alias mutt='neomutt'
 # Bedrock specific commands
 alias archmake='doas strat -r arch make'
 alias quant='cd /home/four/Projects/Quantum_Boady/ && strat -r ubuntu bash'
-alias x="strat arch startx"
-#alias startx="strat arch startx"
+alias spicetify='strat arch spicetify'
+
+# Dev commands
+alias testvue='strat ubuntu npm run dev'
 
 ## Custom Functions
 function extract () {
     if [ -z "$1" ]; then
         echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-    else 
+    else
         if [ -f $1 ] ; then
             case $1 in
                 *.tar.bz2)    tar xjf $1      ;;
@@ -64,7 +66,7 @@ function extract () {
                 *.tgz)        tar xzf $1      ;;
                 *.zip)        unzip $1        ;;
                 *.Z)          uncompress $1   ;;
-                *.xz)         unxz $1         ;;  
+                *.xz)         unxz $1         ;;
                 *)    echo "'$1' cannot be extracted via extract command" ;;
             esac
         else
